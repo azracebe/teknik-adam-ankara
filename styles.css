@@ -519,54 +519,144 @@ footer {
     font-size: 18px;
 }
 
-/* Floating CTA floating call-to-action yani sağdaki ara beni yuvarlağı */
+/* Floating CTA - Improved Version */
 .floating-cta {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
     flex-direction: column;
-    z-index: 999;
+    gap: 15px;
+    z-index: 1000;
+    opacity: 9;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-cta.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .floating-cta a {
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-bottom: 10px;
-    color: white;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-    text-align: center;
-    font-size: 12px;
-    flex-direction: column;
+    color: rgb(46, 183, 85);
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
-.floating-cta a:first-child {
-    background-color: #d35025; 
+/* Tooltip effect on hover */
+.floating-cta a::after {
+    content: attr(aria-label);
+    position: absolute;
+    right: 70px;
+    white-space: nowrap;
+    background: rgba(0,0,0,0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
-.floating-cta a:nth-child(2) {
-    background-color: #25d34b;
-}
-.floating-cta a:last-child {
-    background-color: #0e97f2;
+.floating-cta a:hover::after {
+    opacity: 1;
+    right: 75px;
 }
 
+
+
+/* Icon styles */
 .floating-cta a i {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 22px;
+    transition: transform 0.3s ease;
 }
 
+/* Hover effects */
 .floating-cta a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+.floating-cta a:hover i {
+    transform: scale(1.1);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(211, 80, 37, 0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(211, 80, 37, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(211, 80, 37, 0); }
+}
+
+.floating-cta a.call {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-cta {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .floating-cta a {
+        width: 56px;
+        height: 56px;
+    }
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  align-self: center;
+  margin-left: auto;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: #f9f9f9;
+    position: absolute;
+    top: 120px; /* Menü açılır konum */
+    right: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 150px;
+    z-index: 9999;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
 /* Responsive */
 @media (max-width: 992px) {
     .hero-content h2 {
