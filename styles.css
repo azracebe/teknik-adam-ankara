@@ -49,14 +49,26 @@ ul {
 }
 
 .btn {
-    display: inline-block;
-    background-color:#000000;
-    color: rgb(255, 255, 255);
-    padding: 10px 13px;
-    border-radius: 10px;
-    font-weight: 100;
-    transition: var(--transition);
-    border: 2px solid #080808;
+  display: inline-block;
+  width: 50%;
+  max-width: 300px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 13px;
+  border-radius: 55px;
+  font-weight: 100;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #080808;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .btn:hover {
@@ -97,11 +109,11 @@ ul {
 
 header {
     background-color: white;
-    padding: 15px 0;
+    padding: 0px ;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -193,14 +205,14 @@ nav ul li a:hover::after, nav ul li a.active::after {
 
 /* Hero Bölümü section ilk gördükleri yer winter fotosu buraya*/
 .hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7)),
+    background: linear-gradient(rgba(109, 105, 105, 0.7), rgba(0, 0, 0, 0.7)),
         url('wi') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     align-items: center;
     text-align: center;
-    margin-top: 80px;
-    color: white;
+    margin-top: 100px;
+    color: rgb(26, 26, 26);
 }
 .hero {
     background: linear-gradient(rgba(251, 251, 251, 0.7), rgba(0, 0, 0, 0.7)), 
@@ -229,7 +241,7 @@ nav ul li a:hover::after, nav ul li a.active::after {
 .hero-content p {
     font-size: 20px;
     margin-bottom: 30px;
-    color: #ccc;
+    color: #0b0a0a;
 }
 
 /* Hizmetler Bölümü */
