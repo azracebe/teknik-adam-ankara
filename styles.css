@@ -55,11 +55,12 @@ ul {
 /* Butonlar */
 .btn {
     display: inline-block;
-    width: 50%;
+    width: 50%; /* genişliği otomatik bırak */
     max-width: 300px;
     background-color: #000000;
     color: #ffffff;
-    padding: 10px 13px;
+    padding: 10px 20px; /* iç boşluğu */
+    margin: 5px; /* butonlar arasında boşluk olsun */
     border-radius: 13px;
     font-weight: 100;
     text-align: center;
@@ -84,6 +85,14 @@ ul {
     background-color: rgb(105, 240, 93);
     color: var(--primary-color);
 }
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 
 /* Bölüm Başlıkları */
 .section-title {
@@ -182,7 +191,7 @@ nav ul li a.active::after {
 
 /* Telefon linki özel */
 .phone-link {
-    border: 2px solid #ffffff; /* Çerçeve rengi */
+    border: 2px solid #8e1010; /* Çerçeve rengi */
     border-radius: 8px;
     padding: 8px 16px;
     color: white;
@@ -196,7 +205,7 @@ nav ul li a.active::after {
 .hero {
     background: linear-gradient(rgba(251, 251, 251, 0.7), rgba(0, 0, 0, 0.7)), 
                 url('winter.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -219,6 +228,7 @@ nav ul li a.active::after {
     font-size: clamp(32px, 5vw, 48px); 
     margin-bottom: 20px;
     line-height: 1.2;
+    font-weight: 700;
     color: #0b0a0a; 
 }
 
@@ -531,7 +541,8 @@ footer {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    color: rgb(46, 183, 85);
+    background-color: #25D366; /* Yeşil arka plan */
+    color: white; /* İçindeki ikon veya yazı beyaz */
     font-weight: 500;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-decoration: none;
@@ -559,7 +570,7 @@ footer {
 
 /* Icon styles */
 .floating-cta a i {
-    font-size: 22px;
+    font-size: 28px;
     transition: transform 0.3s ease;
 }
 
@@ -682,16 +693,17 @@ footer {
 
 @media (max-width: 576px) {
     .hero-content h2 {
-        font-size: 24px;
+        font-size: 34px;
+        font-weight: 700px;
     }
     .hero-content p {
-        font-size: 16px;
+        font-size: 19px;
     }
     .section-title {
         font-size: 28px;
     }
     .btn {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 8px 20px;
+        font-size: 17px;
     }
 }
