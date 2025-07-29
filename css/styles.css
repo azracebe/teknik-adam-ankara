@@ -206,7 +206,7 @@ nav ul li a.active::after {
     background: linear-gradient(rgba(251, 251, 251, 0.7), rgba(0, 0, 0, 0.7)), 
                 url('/images/winter.jpg') no-repeat center center/cover;
     background-attachment: scroll;
-    height: 80vh;
+    height: 89.3vh;
     display: flex;
     align-items: center;
     text-align: center;
@@ -215,9 +215,9 @@ nav ul li a.active::after {
 }
 
 .hero-content {
-    max-width: 750px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 40px;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -225,11 +225,15 @@ nav ul li a.active::after {
 }
 
 .hero-content h2 {
-    font-size: clamp(36px, 9vw, 48px); 
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-weight: 700;
-    color: #8d0b0b; 
+  font-size: clamp(2.25rem, 9vw, 3rem); /* px'ten rem'e dönüştürdüm */
+  margin-bottom: 1.25rem; /* px'ten rem'e */
+  line-height: 1.15; /* Daha sıkı satır aralığı */
+  font-weight: 700;
+  color: #8d0b0b;
+  text-wrap: balance; /* Metin dengeleme */
+  padding: 0 1rem; /* Kenar boşlukları */
+  -webkit-font-smoothing: antialiased; /* iOS için optimize */
+  letter-spacing: -0.03em; /* Harf aralığı ayarı */
 }
 
 .hero-content p {
@@ -621,20 +625,39 @@ footer {
 
 /* Responsive Ayarlamalar */
 @media (max-width: 992px) {
-    .hero-content h2 {
-        font-size: 36px;
+  .hero-content {
+    padding: 0 2rem;
+    
+    h2 {
+      font-size: clamp(2rem, 7vw, 3rem); /* Daha dar aralık */
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: nowrap; /* Satır sonlarını engeller */
     }
-    .hero-content p {
-        font-size: 18px;
+    
+    p {
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      line-height: 1.4;
     }
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-    .about-image {
-        order: 2;
-    }
-}
+  }
 
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
+    .about-image {
+      order: 2;
+      margin-top: 2rem;
+    }
+    
+    .about-text {
+      order: 1;
+    }
+  }
+}
 @media (max-width: 768px) {
     .hero {
         background-attachment: scroll;
@@ -644,7 +667,7 @@ footer {
     }
 
     .hero-content {
-        max-width: 90%; /* Mobilde daha geniş alan kullanımı */
+        max-width: 100%; /* Mobilde daha geniş alan kullanımı */
     }
 
     .contact-grid {
