@@ -25,7 +25,7 @@ body {
     line-height: 1.6;
     color: var(--dark-color);
     background-color: #ffffff;
-    background-image: url('winter.jpg');
+    background-image: url('images/winter.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -204,7 +204,7 @@ nav ul li a.active::after {
 /* Hero Bölümü */
 .hero {
     background: linear-gradient(rgba(251, 251, 251, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('winter.jpg') no-repeat center center/cover;
+                url('images/winter.jpg') no-repeat center center/cover;
     background-attachment: scroll;
     height: 80vh;
     display: flex;
@@ -338,7 +338,7 @@ nav ul li a.active::after {
 /* CTA Bölümü */
 .cta {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-        url('winter.jpg') no-repeat center center/cover;
+        url('images/winter.jpg') no-repeat center center/cover;
     padding: 100px 0;
     text-align: center;
     color: white;
