@@ -660,7 +660,7 @@ footer {
 }
 @media (max-width: 768px) {
     .hero {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
         background-position: top center;
         background-size: auto 100%;
         
