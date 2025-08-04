@@ -189,17 +189,6 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* Telefon linki özel */
-.phone-link {
-    border: 2px solid #8e1010; /* Çerçeve rengi */
-    border-radius: 8px;
-    padding: 8px 16px;
-    color: white;
-    background-color: #34b810; /* Arkaplan rengi */
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin-left: auto; /* Diğerlerinden sağa ayırır */
-}
 
 /* Hero Bölümü */
 .hero {
@@ -406,87 +395,110 @@ nav ul li a.active::after {
     float: right;
 }
 
-/* Footer */
+/* FOOTER STYLES */
 footer {
     background-color: var(--primary-color);
-    padding: 20px 10px;
+    padding: 40px 20px 20px;
     color: white;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
 }
 
-.footer-logo img {
+/* Ortak section stilleri */
+.footer-section {
     margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #8b583f;
+    border-radius: 2px;
+}
+
+/* Logo alanı */
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 15px;
 }
 
 .footer-logo p {
     color: #ccc;
+    line-height: 1.6;
 }
 
-.footer-links h3,
-.footer-contact h3,
-.footer-social h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
+/* Linkler */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-links h3::after,
-.footer-contact h3::after,
-.footer-social h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background-color: #8b583f;
+.footer-links li {
+    margin-bottom: 12px;
 }
 
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
+.footer-links a {
     color: #ccc;
-    transition: var(--transition); 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.footer-links ul li a:hover {
-    color: #000000;
-    padding-left: 5px;
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
 }
 
+/* İletişim */
+/* İletişim Bölümü Düzeltilmiş Hali */
 .footer-contact p {
-    margin-bottom: 10px;
-    color: #ccc;
+    color: #ccc !important; /* Güvence için !important ekledim */
+    margin-bottom: 15px;
     display: flex;
-    align-items: center;
-}
-
-.footer-contact p i {
-    color: var(--secondary-color);
-    margin-right: 0px;
-    min-width: 20px;
+    align-items: flex-start;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 .footer-contact a {
-    color: #ccc;
-    transition: var(--transition); 
+    color: #ccc !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .footer-contact a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
 }
 
-.social-icons {
+.footer-contact i {
+    color: var(--secondary-color) !important;
+    margin-right: 10px;
+    min-width: 20px;
+    font-size: 1.1rem;
+}
+/* Sosyal medya */
+.footer-social .social-icons {
     display: flex;
+    gap: 10px;
 }
 
 .social-icons a {
@@ -497,9 +509,8 @@ footer {
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    margin-right: 10px;
-    transition: var(--transition);
     color: white;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -507,14 +518,14 @@ footer {
     transform: translateY(-3px);
 }
 
+/* Footer alt kısmı */
 .footer-bottom {
     text-align: center;
-    padding-top: 2px;
-    border-top: 1px solid rgba(241, 1, 1, 0.1);
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ccc;
-    font-size: 18px;
+    font-size: 0.9rem;
 }
-
 /* Floating CTA - Improved Version */
 .floating-cta {
     position: fixed;
